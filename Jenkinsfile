@@ -6,9 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                tool(nodeJS:NodeJS-19.1.0){
                 sh 'npm install'
-                }
             }
         }
         stage('Test') {
