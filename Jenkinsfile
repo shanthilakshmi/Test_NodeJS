@@ -3,7 +3,7 @@ pipeline {
      environment {
             CI = 'true'
         }
-    tools {nodejs 'NodeJS-19.1.0'}
+    tools {nodejs 'NodeJS-16.0.0'}
     stages {
         stage('Build') {
             steps {
