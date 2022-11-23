@@ -1,8 +1,5 @@
 pipeline {
     agent any
-     environment {
-            CI = 'true'
-        }
     tools {nodejs 'NodeJS-16.0.0'}
     stages {
         stage('Build') {
@@ -10,18 +7,23 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('run') {
                     steps {
-                        sh './jenkins/scripts/test.sh'
+                        sh 'npm run'
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        sh 'chmod +x -R Test_NodeJS'
+                        sh 'rm -rf /var/lib/jenkins/.npm/_logs'
+                        sh './Test_NodeJS/jenkins/scripts/test.sh'
                     }
                 }
                 stage('Deliver') {
                             steps {
-                                sh './jenkins/scripts/deliver.sh'
-                                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                                sh './jenkins/scripts/kill.sh'
+                                sh './Test_NodeJS/jenkins/scripts/deliver.sh'
+                                sh './Test_NodeJS/jenkins/scripts/kill.sh'
                             }
                         }
-
     }
 }
