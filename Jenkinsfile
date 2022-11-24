@@ -7,11 +7,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('run') {
-                    steps {
-                        sh 'npm run'
-                        }
-                }
                 stage('Test') {
                     steps {
                         sh 'chmod +x -R Test_NodeJS'
