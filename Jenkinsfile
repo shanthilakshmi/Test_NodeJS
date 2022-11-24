@@ -24,7 +24,7 @@ pipeline {
                     steps {
                         sh 'chmod +x -R Test_NodeJS'
                         sh 'rm -rf /var/lib/jenkins/.npm/_logs'
-                        sh './Test_NodeJS/jenkins/scripts/test.sh'
+                        sh 'npm test'
                     }
                 }
                 stage('Deliver') {
