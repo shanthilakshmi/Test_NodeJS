@@ -2,12 +2,6 @@ pipeline {
     agent any
     tools {nodejs 'NodeJS-16.18.1'}
     stages {
-        stage('clonig the repo'){
-            steps{
-                sh 'rm -rf Test_NodeJS'
-                sh 'git clone https://github.com/shanthilakshmi/Test_NodeJS.git'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'npm install'
