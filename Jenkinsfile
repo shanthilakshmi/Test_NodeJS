@@ -10,9 +10,7 @@ pipeline {
         stage('run') {
                     steps {
                         sh 'npm run'
-                        //sh "chmod +x -R Test_NodeJS"
-                        //sh './Test_NodeJS/jenkins/scripts/test.sh'
-                    }
+                        }
                 }
                 stage('Test') {
                     steps {
@@ -24,7 +22,6 @@ pipeline {
                 stage('Deliver') {
                             steps {
                                 sh './Test_NodeJS/jenkins/scripts/deliver.sh'
-                                input message: 'Finished using the web site? (Click "Proceed" to continue)'
                                 sh './Test_NodeJS/jenkins/scripts/kill.sh'
                             }
                         }
