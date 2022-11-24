@@ -24,6 +24,7 @@ pipeline {
                     steps {
                         sh 'chmod +x -R Test_NodeJS'
                         sh 'rm -rf /var/lib/jenkins/.npm/_logs'
+                        sh 'npm install object.assign'
                         sh 'npm test'
                     }
                 }
