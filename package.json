@@ -2,6 +2,8 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "publishConfig": {
+    "registry": "http://13.235.31.39:9980/"
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
