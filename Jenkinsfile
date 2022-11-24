@@ -21,7 +21,8 @@ pipeline {
                 }
                 stage('Deliver') {
                             steps {
-                                sh './Test_NodeJS/jenkins/scripts/deliver.sh'
+                                sh 'npm deploy'
+                                //sh './Test_NodeJS/jenkins/scripts/deliver.sh'
                                 sh './Test_NodeJS/jenkins/scripts/kill.sh'
                             }
                         }
