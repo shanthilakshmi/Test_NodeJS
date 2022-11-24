@@ -16,10 +16,10 @@ pipeline {
                 }
                 stage('Deliver') {
                             steps {
-                                sh './Test_NodeJS/jenkins/scripts/deliver.sh'
-                                sh './Test_NodeJS/jenkins/scripts/kill.sh'
+                                //sh './Test_NodeJS/jenkins/scripts/deliver.sh'
+                                //sh './Test_NodeJS/jenkins/scripts/kill.sh'
                                  //sh 'rm -rf /var/lib/jenkins/.npm/_logs'
-                                 //sh 'npm publish'
+                                 sh 'npm publish'
                             }
                         }
 
